@@ -182,6 +182,7 @@ class CakePdf
      * @var mixed
      */
     protected $_allow = false;
+    protected $_binary = null;
 
     /**
      * Available permissions
@@ -218,7 +219,7 @@ class CakePdf
             $this->crypto($config['crypto']);
         }
 
-        $options = ['pageSize', 'orientation', 'margin', 'title', 'encoding', 'protect', 'userPassword', 'ownerPassword', 'permissions', 'cache'];
+        $options = ['pageSize', 'orientation', 'margin', 'title', 'encoding', 'protect', 'userPassword', 'ownerPassword', 'permissions', 'cache', 'binary'];
         foreach ($options as $option) {
             if (isset($config[$option])) {
                 $this->{$option}($config[$option]);
@@ -309,7 +310,9 @@ class CakePdf
         if (!$name) {
             return $this->_engineClass;
         }
-        $config = [];
+        $config = [
+            'binary' => $this->_binary
+        ];
         if (is_array($name)) {
             $config = $name;
             $name = $name['className'];
