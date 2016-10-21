@@ -1,3 +1,6 @@
+# Disclaimer
+I costumized this plugin for my own need. Please refer to the original source for better support
+
 # CakePdf plugin
 
 [![Build Status](https://travis-ci.org/FriendsOfCake/CakePdf.svg?branch=3.0)](https://travis-ci.org/FriendsOfCake/CakePdf)
